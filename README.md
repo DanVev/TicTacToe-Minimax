@@ -1,2 +1,2 @@
 # TicTacToe-Minimax
-Tic Tac Toe on python with minimax algorithm
+Tic Tac Toe on python3 with minimax algorithm
