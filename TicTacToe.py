@@ -4,6 +4,12 @@ from time import sleep
 from termcolor import colored
 from random import choice
 
+try:
+    from termcolor import colored
+except ImportError:
+    def colored(x):
+        return x
+
 
 class Move(object):
 	def __init__(self, score, index):
