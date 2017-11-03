@@ -10,6 +10,7 @@ class Move(object):
 		self.score = score
 		self.index = index
 
+
 def init_board():
 	return [' ' for i in range(9)]
 
@@ -59,6 +60,7 @@ def is_free(move, board):
 def change_sign(sign):
 	return 'x' if sign == 'o' else 'o'
 
+
 def change_player(player):
 	if mode == 1:
 		return ' PLAYER X' if player == ' PLAYER O' else ' PLAYER O'
@@ -66,6 +68,7 @@ def change_player(player):
 		return ' PLAYER X' if player == ' AI O' else ' AI O'
 	else:
 		return ' AI X' if player == ' AI O' else ' AI O'
+
 
 def empty_indices(board):
 	return [i for i in range(len(board)) if board[i] == ' ']
@@ -144,6 +147,7 @@ def draw_win_board(player):
 	except KeyboardInterrupt:
 		pass
 
+
 def minimax(sign, board, is_max_sign=True, depth=0):
 	"""Return a best move for a sign in a board."""
 	depth += 1
@@ -193,6 +197,7 @@ def minimax(sign, board, is_max_sign=True, depth=0):
 				best_score = moves[i].score
 
 	return moves[best_move]   # Return index of best move for passed board
+
 
 # Clear screen procedure depends on OS type
 if sys_name == 'posix':
