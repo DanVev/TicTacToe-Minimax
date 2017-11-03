@@ -1,8 +1,8 @@
 from os import system
 from os import name as sys_name
 from time import sleep
-from termcolor import colored
 from random import choice
+
 
 try:
     from termcolor import colored
@@ -50,11 +50,11 @@ def draw_board(board):
  ╚═══╩═══╩═══╝ '.format(*board))
 
 
-def player_move(sign, board):
+def player_move(board):
 	while True:
-		move = get_input(' Input your move: ', 9, 'print(" Invalid move")') - 1
-		if is_free(move, board):
-			return move
+		player_move = get_input(' Input your move: ', 9, 'print(" Invalid move")') - 1
+		if is_free(player_move, board):
+			return player_move
 		else:
 			print(" Space is not free")
 
@@ -237,7 +237,7 @@ while True:
 		while True:
 			print(current_player)
 			draw_board(real_board)
-			move = player_move(current_sign, real_board)
+			move = player_move(real_board)
 			real_board[move] = current_sign
 			win = win_check(current_sign, real_board)
 			if win:
@@ -262,7 +262,7 @@ while True:
 			print(current_player)
 			draw_board(real_board)
 			if current_sign == 'x':
-				move = player_move(current_sign, real_board)
+				move = player_move(real_board)
 			elif first_move:
 				move = choice(range(1, 9))
 				first_move = False
