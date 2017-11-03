@@ -2,7 +2,7 @@ from os import system
 from os import name as sys_name
 from time import sleep
 from termcolor import colored
-from random import randint, choice
+from random import choice
 
 
 class Move(object):
