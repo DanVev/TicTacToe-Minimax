@@ -52,7 +52,8 @@ def draw_board(board):
 
 def player_move(board):
 	while True:
-		player_move = get_input(' Input your move: ', 9, 'print(" Invalid move")') - 1
+		player_move = get_input(' Input your move: ', 9,
+                          'print(" Invalid move")') - 1
 		if is_free(player_move, board):
 			return player_move
 		else:
